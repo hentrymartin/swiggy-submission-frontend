@@ -22,7 +22,7 @@ export const getUser = () => {
       cache: 'default',
     };
 
-    return fetch(Constants.API_URL + 'api/user', options)
+    return fetch(Constants.API_URL + 'user', options)
     .then(res => res.json())
     .then((data) => {
       setItem('swiggySampleUser', data);
