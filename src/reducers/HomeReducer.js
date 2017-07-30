@@ -112,7 +112,7 @@ const HomeReducer = (state = defaultState, action) => {
         return post;
       });
       action.post.formattedTime = moment().to(moment(action.post.timestamp));
-      postsAfterAdding.push(action.post);
+      postsAfterAdding.unshift(action.post);
       return Object.assign({}, state, {
         posts: postsAfterAdding,
         postContent: '',
