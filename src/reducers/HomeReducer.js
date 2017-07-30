@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const defaultState = {
   posts: [],
 };
@@ -63,7 +65,10 @@ const HomeReducer = (state = defaultState, action) => {
       });
     case 'POSTS_RECEIVED':
       return Object.assign({}, state, {
-        posts: action.posts,
+        posts: action.posts.map((post) => {
+          post.formattedTime = moment().to(moment(post.timestamp));
+          return post;
+        }),
       });
     case 'SHOW_COMMENT_INPUT_BY_COMMENT':
       const posts = state.posts.map((post) => {
@@ -90,7 +95,6 @@ const HomeReducer = (state = defaultState, action) => {
     case 'COMMENT_ADDED':
       const addedPosts = state.posts.map((post) => {
         if (post._id === action.comment.postId  && post._id === action.parent._id) {
-          console.log(action.comment);
           post.commentInputValue = '';
           post.comments.push(action.comment);
         } else {
@@ -107,10 +111,20 @@ const HomeReducer = (state = defaultState, action) => {
       const postsAfterAdding = state.posts.map((post) => {
         return post;
       });
+      action.post.formattedTime = moment().to(moment(action.post.timestamp));
       postsAfterAdding.push(action.post);
       return Object.assign({}, state, {
         posts: postsAfterAdding,
         postContent: '',
+      });
+    case 'UPDATE_TIME':
+      const updatedPost = state.posts.map((post) => {
+        post.formattedTime = moment().to(moment(post.timestamp));
+        return post;
+      });
+
+      return Object.assign({}, state, {
+        posts: updatedPost,
       });
     default:
       return state;

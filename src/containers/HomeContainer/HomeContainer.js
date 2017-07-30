@@ -8,6 +8,7 @@ import {
   onCommentInputChange,
   addComment,
   onAddPost,
+  updateTime,
 } from './../../actions/HomeActions';
 
 const mapStatesToProps = (state) => {
@@ -36,6 +37,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onAddPost: (params) => {
       onAddPost(params)(dispatch);
+    },
+    updateTime: () => {
+      dispatch(updateTime());
     },
   };
 };

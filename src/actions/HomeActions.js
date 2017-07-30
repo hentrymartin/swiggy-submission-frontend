@@ -50,6 +50,12 @@ export const postAdded = (post) => {
   };
 };
 
+export const updateTime = () => {
+  return {
+    type: 'UPDATE_TIME',
+  };
+};
+
 export const getPosts = () => {
   return (dispatch) => {
     const options = {

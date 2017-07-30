@@ -11,6 +11,9 @@ class Home extends Component {
 
   componentDidMount() {
     this.props.getPosts();
+    setInterval(() => {
+      this.props.updateTime();
+    }, 1000 * 60);
   }
 
   onAddPost() {

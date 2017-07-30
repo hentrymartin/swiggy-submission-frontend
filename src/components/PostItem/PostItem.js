@@ -31,7 +31,7 @@ class PostItem extends Component {
           <img className="post-item__user-img" src={this.props.post.author.imageUrl ? this.props.post.author.imageUrl : Images.UserDefaultIcon}/>
           <div className="post-item__author__info">
             <div className="post-item__author__info__name">{this.props.post.author.name}</div>
-            <div className="post-item__author__info__posted-time">{moment(this.props.post.timestamp).format('DD/MM/YYYY hh:mm')}</div>
+            <div className="post-item__author__info__posted-time">{this.props.post.formattedTime}</div>
           </div>
         </div>
         <div className="post-item__content">
