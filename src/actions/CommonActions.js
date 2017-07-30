@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
 import {receivedNotification} from './NotificationActions';
 import {Constants} from './../constants/constants';
-const socket = io(Constants.API_URL);
+const socket = io(Constants.SOCKET_URL);
 
 export const postNotificationToServer = (params) => {
   socket.emit('post', params);
