@@ -1,0 +1,25 @@
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  min-width: 400px;
+  min-height: 300px;
+  -webkit-box-shadow: -1px 0px 13px 1px rgba(138,131,138,0.75);
+  -moz-box-shadow: -1px 0px 13px 1px rgba(138,131,138,0.75);
+  box-shadow: -1px 0px 13px 1px rgba(138,131,138,0.75);
+  padding: 15px;
+  display: none;
+  background: white;
+  &.open {
+    display: block;
+  }
+  &__close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    img {
+      width: 10px;
+    }
+  }
+}

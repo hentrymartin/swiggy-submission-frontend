@@ -1,0 +1,13 @@
+.comment-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  img {
+    height: 44px;
+  }
+  input {
+    border: 1px solid #DFDDDD;
+  }
+}

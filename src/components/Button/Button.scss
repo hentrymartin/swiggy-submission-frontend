@@ -1,0 +1,60 @@
+@import './../../../public/scss/partials/variables.scss';
+
+.button {
+  border-color: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+  &.medium {
+    font-size: 14px;
+    padding: 0px 25px;
+    height: 35px;
+  }
+  &.custom {
+    background: $button-bg-custom;
+    color: $white;
+    &:hover {
+      background: #d69a41;
+    }
+  }
+
+  &.disabled {
+    background: #d8d3cd;
+    color: $white;
+    &:hover {
+      background: #a9a6a3;
+    }
+  }
+
+  &.update {
+    background: #52bb85;
+    &:hover {
+      background: #058c46;
+    }
+  }
+
+  &.upgrade {
+    background: #55c371;
+    color: $white;
+    padding: 0px 50px;
+    font-size: 18px;
+    transition: background 0.5s;
+    text-transform: uppercase;
+    height: 49px;
+    &:hover {
+      background: #1d7d35;
+    }
+  }
+
+  &.light {
+    background: $white;
+    color: #ECAA27;
+    border-color: #ECAA27;
+    border: 1px solid;
+    transition: all 0.5s;
+    &:hover {
+      background-color: #ECAA27;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.add-post {
+  height: 100px;
+  width: 100%;
+  margin: 85px auto 30px auto;
+  textarea {
+    width: 100%;
+    height: 70px;
+    border: 1px solid #c5c5c5;
+    border-radius: 3px;
+    outline: none;
+    font-size: 18px;
+    transition: border 0.5s, background 0.5s;
+    &:focus {
+      border: 1px solid #31ad22;
+      background: #f2f9ff;
+    }
+  }
+  &__btn-wrapper {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    .button {
+      height: 28px;
+      font-size: 11px;
+      background: #4da0f5;
+      transition: background 0.5s;
+      &:hover {
+        background: #0372e4;
+      }
+    }
+  }
+}

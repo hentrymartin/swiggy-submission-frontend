@@ -1,0 +1,41 @@
+.auto-complete {
+  position: relative;
+  cursor: pointer;
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid #d2cfcf;
+    z-index: 100000000;
+    background: white;
+    li {
+      list-style: none;
+      padding: 5px;
+      transition: background 0.5s, color 0.5s;
+      &:hover {
+        background: grey;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__arrow-holder {
+    position: absolute;
+    top: 9px;
+    right: 7px;
+    img {
+      height: 15px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    margin-top: 10px;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
