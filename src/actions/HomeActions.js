@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch';
 import {getItem} from './../utils/storageUtils';
 import moment from 'moment';
 import {postNotificationToServer} from './CommonActions';
+import {Constants} from './../constants/constants';
 
 export const onPostContentChange = (postContent) => {
   return {
@@ -60,7 +61,7 @@ export const getPosts = () => {
       mode: 'cors',
       cache: 'default',
     };
-    return fetch('http://localhost:3001/api/post', options)
+    return fetch(Constants.API_URL + 'post', options)
     .then(res => res.json())
     .then((data) => {
       dispatch(postsReceived(data));
@@ -90,7 +91,7 @@ export const addComment = (comment) => {
       body: JSON.stringify(params),
     };
 
-    return fetch('http://localhost:3001/api/comment/create', options)
+    return fetch(Constants.API_URL + 'comment/create', options)
     .then(res => res.json())
     .then((data) => {
       dispatch(commentAdded(data, comment));
@@ -111,7 +112,7 @@ export const onAddPost = (params) => {
       body: JSON.stringify(params),
     };
 
-    return fetch('http://localhost:3001/api/post/create', options)
+    return fetch(Constants.API_URL + 'post/create', options)
     .then(res => res.json())
     .then((data) => {
       dispatch(postAdded(data));

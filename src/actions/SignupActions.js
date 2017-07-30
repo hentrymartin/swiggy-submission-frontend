@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import {setItem, getItem} from './../utils/storageUtils';
+import {Constants} from './../constants/constants';
 
 export const onChange = (field, data) => {
   return {
@@ -27,7 +28,7 @@ export const onSignUp = (params) => {
       body: JSON.stringify(params),
     };
 
-    return fetch('http://localhost:3001/api/user/create', options)
+    return fetch(Constants.API_URL + 'api/user/create', options)
     .then(res => res.json())
     .then((data) => {
       if (data.error_code) {

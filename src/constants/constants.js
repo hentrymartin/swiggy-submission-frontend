@@ -1,8 +1,3 @@
 export const Constants = {
-  data: [
-    {team: 'Engineering', employees: ['Lawana Fan', 'Larry Rainer', 'Rahul Malik', 'Leah Shumway']},
-    {team: 'Executive', employees: ['Rohan Gupta', 'Ronda Dean', 'Robby Maharaj']},
-    {team: 'Finance', employees: ['Caleb Brown', 'Carol Smithson', 'Carl Sorensen']},
-    {team: 'Sales', employees: ['Ankit Jain', 'Anjali Maulingkar']},
-  ],
+  API_URL: 'http://ec2-34-210-106-157.us-west-2.compute.amazonaws.com:3001/api/',
 };

@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import {getItem} from './../utils/storageUtils';
+import {Constants} from './../constants/constants';
 
 export const friendsFetched = (friends) => {
   return {
@@ -47,7 +48,7 @@ export const getFriends = () => {
       cache: 'default',
     };
 
-    return fetch('http://localhost:3001/api/friends', options)
+    return fetch(Constants.API_URL + 'friends', options)
     .then(res => res.json())
     .then((data) => {
       dispatch(friendsFetched(data));
@@ -73,7 +74,7 @@ export const makeFriends = (user) => {
       body: JSON.stringify(params),
     };
 
-    return fetch('http://localhost:3001/api/friends/make', options)
+    return fetch(Constants.API_URL + 'friends/make', options)
     .then(res => res.json())
     .then((data) => {
       getFriends()(dispatch);

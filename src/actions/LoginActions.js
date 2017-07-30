@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import {setItem, getItem} from './../utils/storageUtils';
+import {Constants} from './../constants/constants';
 
 export const onChange = (field, data) => {
   return {
@@ -21,7 +22,7 @@ export const getUser = () => {
       cache: 'default',
     };
 
-    return fetch('http://localhost:3001/api/user', options)
+    return fetch(Constants.API_URL + 'api/user', options)
     .then(res => res.json())
     .then((data) => {
       setItem('swiggySampleUser', data);
@@ -42,7 +43,7 @@ export const onLogin = (params) => {
       body: JSON.stringify(params),
     };
 
-    return fetch('http://localhost:3001/api/user/authenticate', options)
+    return fetch(Constants.API_URL + 'user/authenticate', options)
     .then(res => res.json())
     .then((data) => {
       setItem('swiggySampleToken', data.token);
