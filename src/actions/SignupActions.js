@@ -28,7 +28,7 @@ export const onSignUp = (params) => {
       body: JSON.stringify(params),
     };
 
-    return fetch(Constants.API_URL + 'api/user/create', options)
+    return fetch(Constants.API_URL + 'user/create', options)
     .then(res => res.json())
     .then((data) => {
       if (data.error_code) {
