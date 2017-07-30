@@ -1,4 +1,4 @@
-# LendingKart Sample Submission
+# Swiggy Sample Submission
 
 ## Tech Stack
 
